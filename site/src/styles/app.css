@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #08080b;
+  --color-ink-2: #101014;
+  --color-cream: #f5f0eb;
+  --color-brand: #ff6b35;
+  --color-brand-400: #ff8a5c;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink font-sans text-cream antialiased;
+    background-image:
+      radial-gradient(60rem 40rem at 80% -10%, rgba(255, 107, 53, 0.1), transparent 60%),
+      radial-gradient(50rem 35rem at 0% 0%, rgba(255, 107, 53, 0.05), transparent 55%);
+    background-repeat: no-repeat;
+  }
+  ::selection {
+    @apply bg-brand text-ink;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand;
+  }
+}
